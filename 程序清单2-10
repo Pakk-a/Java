@@ -1,0 +1,36 @@
+package copy;
+
+import java.util.Scanner;
+
+public class copy {
+
+	public static void main(String[] args) {
+		//Creat a Scanner 
+		Scanner input = new Scanner(System.in);
+		
+		//Receive the amount
+		System.out.print("Enter an amount in double,for example 11.56: ");
+		double amount = input.nextDouble();
+		
+		int remainingAmount = (int)(amount * 100);
+		
+		//Find the number of one dollars
+		int numberOfOneDollars = remainingAmount / 100;
+		
+		//Find the number of one dollars
+		int numberOfQuarters = remainingAmount / 25;
+		remainingAmount = remainingAmount %25;
+		
+		//Find the number of one dollars
+		int numberOfQuarters = remainingAmount / 25;
+		remainingAmount = remainingAmount %25;//Enter loan amount
+		
+		
+		//Display results
+		System.out.println("The monshlypayment is $" + (int)(monthlyPayment * 100) / 100.0);
+		System.out.println("The total payment is $" + (int)(totalPayment * 100) / 100.0);
+
+
+	}
+
+}
