@@ -1,0 +1,24 @@
+
+public class CircleWithStaticMembers {
+	/** The radius of the circle*/
+	double radius;
+	
+	/** The number of objects created*/
+	static int numberOfObjects = 0;
+	
+	/** Construct a circle with a specified radius*/
+	CircleWithStaticMembers(double newRdius) {
+		radius = newRdius;
+		numberOfObjects++;
+	}
+	
+	/** Return numberOfObjects*/
+	static int getNumberOfObjects() {
+		return numberOfObjects;
+	}
+	
+	/** Retuern numberOfObjects*/
+	double getArea() {
+		return radius * radius * Math.PI;
+	}	
+}
