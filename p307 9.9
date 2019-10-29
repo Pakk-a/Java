@@ -1,0 +1,69 @@
+
+public class RegularPolygon {
+	final static double PI = 3.1415926;
+	private int n = 3;
+	private double side = 1;
+	private double x = 0;
+	private double y = 0;
+	RegularPolygon(){
+		
+	}
+	RegularPolygon(int NewN,double NewSide){
+		n = NewN;
+		side = NewSide;
+		x = 0;
+		y = 0;
+	}
+	RegularPolygon(int NewN,double NewSide,double NewX,double NewY){
+		n = NewN;
+		side = NewSide;
+		x = NewX;
+		y = NewY;
+	}
+	
+	//访问器
+	public void setN(int NewN){
+		n = NewN;
+	}
+	public void setS(double NewS){
+		side = NewS;
+	}
+	public void setX(double NewX){
+		x = NewX;
+	}
+	public void setY(double NewY){
+		y = NewY;
+	}
+	public void setPerimeter(int n,double side){
+		this.n = n;
+		this.side = side;
+	}
+	public void setArea(int n,double side){
+		this.n = n;
+		this.side = side;
+	}
+	
+	//修改器
+	public int getN(){
+		return n;
+	}
+	public double getS(){
+		return side;
+	}
+	public double getX(){
+		return x;
+	}
+	public double getY(){
+		return y;
+	}
+	public double getPerimeter(){
+		return n*side;
+	}
+	public double getArea(){
+		return n*side*side/(4*Math.tan(PI/n));
+	}
+	
+	public void printRegularPolygon(){
+		System.out.println("该" + n + "边形周长有 " + getPerimeter() + ",面积为 " + getArea());
+	}
+}
