@@ -12,11 +12,16 @@ public class RepeatAdditionQuiz {
 		int answer = input.nextInt();
 		int data[]= new int[1000]; 
 		int i = 0;
-		data[0]= -1;
+		int f=0;
 		while(number1 + number2 != answer){
 			i = i + 1;
+			f = 0;
+			for(int j=1;j<=i;j++){
+				if(data[j]==answer)
+					f=1;
+			}
 			data[i] = answer;
-			if(data[i]!=data[i-1]){
+			if(f==0){
 				System.out.print("Wrong answer. Try again. What is " + number1 + "+" + number2 + "? ");
 			}
 			else{
