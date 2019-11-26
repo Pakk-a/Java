@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ClassStudent {
+	public static void main(String[] args) {
+		int n;
+		String[] name = new String[110];
+		String a;
+		String ch;
+		int[] grade = new int[110];
+		int b;
+		int t;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the number of the students: ");
+		n = input.nextInt();
+		System.out.print("Enter the name and grade of the students: ");
+		for(int i = 0; i < n; i++) {
+			a = input.next();
+			name[i] = a;
+			b = input.nextInt();
+			grade[i] = b;
+		}
+		
+		for(int i = 0; i < n; i++) {
+			for(int j = 0; j < n - 1; j++) {
+				if(grade[j] < grade[j+1]) {
+					t = grade[j];
+					grade[j] = grade[j+1];
+					grade[j+1] = t;
+					ch = name[j];
+					name[j] = name[j+1];
+					name[j+1] = ch;
+					
+				}
+			}
+		}
+		
+		for(int i = 0; i < n; i++) {
+			System.out.println("The student's name and grade is: " + name[i] +" " + grade[i]);
+		}
+	}
+
+}
