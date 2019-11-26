@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Sevenfive {
+	public static void main(String[] args) {
+		System.out.print("Enter ten numbers: ");
+		Scanner input = new Scanner(System.in);
+		int number;
+		int flag;
+		int s[] = new int[110];
+		int sum = 0;
+		
+		for(int i = 0; i < 10; i++){
+			number = input.nextInt();
+			flag = 0;
+			for(int j = 0; j < sum; j++){
+				if(number == s[j])
+					flag = 1;
+			}
+			if(flag == 0) {
+				s[sum] = number;
+				sum++;
+			}
+		}
+		System.out.println("The number of distinct number is " + sum);
+		System.out.print("The distinct numbers are:");
+		for(int i = 0; i < sum; i++) {
+				System.out.print(s[i] + " ");
+		}
+			
+	}
+
+}
