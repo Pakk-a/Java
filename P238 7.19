@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Sort {
+	
+	public static boolean isSorted(int[] list) {
+		
+		for(int i = 1; i < list[0]; i++) {
+			if(list[i] > list[i+1])
+				return false;
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+		int[] list = new int[110];
+		System.out.print("Enter list: ");
+	    Scanner input = new Scanner(System.in);
+	    int n = input.nextInt();
+	    list[0] = n;
+	    int a;
+	    for(int i = 1; i <= n; i++) {
+	    	a = input.nextInt();
+		    list[i] = a;
+	    }
+	    if(isSorted(list)) 
+	    	System.out.println("The list is already sorted");
+	    else
+	    	System.out.println("The list is not sorted");  	
+	}
+}
