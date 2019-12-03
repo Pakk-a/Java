@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Combine {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n,a;
+		System.out.print("Enter list1: ");
+		n = input.nextInt();
+		int[] list1 = new int[n];
+		for(int i = 0; i < n; i++){
+			a = input.nextInt();
+			list1[i] = a;
+		}
+		System.out.print("Enter list2: ");
+		n = input.nextInt();
+		int[] list2 = new int[n];
+		for(int i = 0; i < n; i++){
+			a = input.nextInt();
+			list2[i] = a;
+		}
+		merge(list1,list2);
+	}
+	public static int[] merge(int[] list1,int[] list2){
+		int[] list = new int[list1.length+list2.length];
+		int n = 0;
+		for(int i = 0; i < list1.length; i++){
+			list[i] = list1[i];
+			n++;
+		}
+		for(int j = 0; j < list2.length; j++){
+			list[n + j + 1] = list2[j];
+		}
+		for(int i = 0; i < list.length; i++){
+			for(int j = 0; j < list.length; j++){
+				if(list[j] > list[j+1]){
+					n = list[j];
+					list[j] = list[j+1];
+					list[j+1] = n;
+				}
+			}
+		}
+		for(int j = 0; j < list.length; j++){
+			System.out.print(list[j]);
+		}
+		return list;
+	}
+
+}
