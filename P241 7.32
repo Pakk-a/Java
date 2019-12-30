@@ -1,0 +1,32 @@
+import java.util.Scanner;
+ 
+public class Partition {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter list: ");
+        int n = input.nextInt();
+        int i,j,min,temp; 
+        int[] a = new int[110];
+        for(i = 0; i < n; i++) {
+        	a[i] = input.nextInt();
+        }
+        for(i=0;i<n;i++) 
+        {
+             min=i; 
+             for(j=i + 1; j < n; j++)  /* 从j往前的数据都是排好的，所以从j开始往下找剩下的元素中最小的 */
+             {
+                  if(a[min] > a[j])  /* 把剩下元素中最小的那个放到a[i]中 */
+                  {
+                   temp = a[i]; 
+                   a[i] = a[j]; 
+                   a[j] = temp;
+                  }
+             }
+        } 
+        System.out.print("After the partition,the list is ");
+        for(i = 0; i < n; i++) {
+        	System.out.print(a[i] + " ");
+        }
+            
+    }
+}
